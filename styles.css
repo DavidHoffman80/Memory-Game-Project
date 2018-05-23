@@ -33,6 +33,7 @@ body {
   grid-row: 1 / 2;
   font-size: 3.5rem;
   line-height: 3rem;
+  margin-top: 1rem;
 }
 
 #header button {
@@ -88,9 +89,9 @@ body {
 }
 
 #game {
-  width: 700px;
-  height: 700px;
-  margin: 0 auto 2rem;
+  width: 500px;
+  height: 500px;
+  margin: 0 auto 1rem;
   padding: 1rem;
   border-radius: 10px;
   box-shadow: 5px 5px 7px rgb(90, 90, 90);
@@ -121,6 +122,7 @@ body {
 
 .card-container.flipped {
   transform: rotateY(180deg);
+  transition: all 0.5s ease-in-out;
 }
 
 .card-back {
@@ -130,14 +132,79 @@ body {
   border-radius: 10px;
   background: var(--black);
   backface-visibility: hidden;
+  cursor: pointer;
 }
 
 .card-front {
-  position: absolute;
+  position: relative;
   width: 100%;
   height: 100%;
   border-radius: 10px;
   background: var(--beautiful-blue);
   backface-visibility: hidden;
   transform: rotateY(180deg);
+  transition: all 0.5s ease-in-out;
+}
+
+.card-front .fas,
+.card-front .fab {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.card-front.matched {
+  background: var(--yellow-green);
+}
+
+.card-front.no-match {
+  background: var(--red);
+}
+
+#modal {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+  background: rgba(0, 0, 0, 0.6);
+  font-family: 'Gloria Hallelujah', cursive;
+}
+
+.modal-info{
+  position: relative;
+  width: 80%;
+  margin: 6rem auto 0;
+  border-radius: 10px;
+  background: white;
+  font-size: 1.5rem;
+  padding: 1rem;
+}
+
+.congrats {
+  text-align: center;
+}
+
+.close {
+  position: absolute;
+  margin: 0;
+  top: .75rem;
+  right: 1rem;
+  font-size: 2.5rem;
+  line-height: 2.5rem;
+}
+
+.won {
+  text-align: center;
+}
+
+.final-stars .fas {
+  color: var(--yellow);
+}
+
+.total-moves-count,
+.total-time-count-min,
+.total-time-count-sec {
+  color: var(--beautiful-blue);
 }
