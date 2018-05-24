@@ -162,7 +162,7 @@ body {
   background: var(--red);
 }
 
-#modal {
+.modal {
   width: 100vw;
   height: 100vh;
   position: absolute;
@@ -180,6 +180,7 @@ body {
   background: white;
   font-size: 1.5rem;
   padding: 1rem;
+  text-align: center;
 }
 
 .congrats {
@@ -193,6 +194,7 @@ body {
   right: 1rem;
   font-size: 2.5rem;
   line-height: 2.5rem;
+  cursor: pointer;
 }
 
 .won {
